@@ -10,6 +10,6 @@ get '/config' do
   node_ip = find_node_ip_from_connected_device_ip(device_ip)
   puts "node_ip = #{node_ip} for device_ip = #{device_ip}"
   
-  redirect 'http://www.google.co.uk' if source_ip == '192.168.1.79'
-  redirect 'http://www.yahoo.com' if source_ip == '192.168.1.86'
+  redirect 'http://www.google.co.uk' if device_ip == '192.168.1.79'
+  redirect 'http://www.yahoo.com' if device_ip == '192.168.1.86'
 end
