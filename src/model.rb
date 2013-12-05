@@ -8,7 +8,6 @@ module AutomationStack
   module Domain
   end
 
-
   module Infrastructure
 
     class Machine < Sequel::Model
@@ -18,7 +17,6 @@ module AutomationStack
     end
 
     class Analytics < Sequel::Model
-
     end
 
     class Platform < Sequel::Model
@@ -31,10 +29,8 @@ module AutomationStack
       many_to_one :device
     end
 
-
     class Manufacturer < Sequel::Model
       one_to_many :devices
-
     end
 
     class DeviceType < Sequel::Model
@@ -49,8 +45,8 @@ module AutomationStack
     end
 
     class Project < Sequel::Model
-		plugin :serialization, :json
-	 	one_to_many :jobs
+      plugin :serialization, :json
+      one_to_many :jobs
     end
 
     class Job < Sequel::Model
