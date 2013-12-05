@@ -1,0 +1,35 @@
+#!/usr/bin/env sh
+
+function start()
+{
+	echo "Starting proxy on port 8888..."
+	rackup &
+	echo "$!" > proxy.pid
+}
+
+function stop()
+{
+	pid=$(cat proxy.pid)
+	kill -9 $pid
+	rm proxy.pid
+	echo "Proxy stopped."
+}
+
+case "$1" in
+	start)
+		start
+		;;
+
+	stop)
+		stop
+		;;
+
+	restart)
+		stop
+		start
+		;;
+
+	*)
+		echo "Usage: ./proxy_control start|stop|restart"
+		;;
+esac
