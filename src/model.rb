@@ -1,8 +1,4 @@
-require 'yaml'
-require 'mysql2' 
-require "sequel"
-
-require_relative "./mysql"
+require "dbconnect"
 
 module AutomationStack
 
