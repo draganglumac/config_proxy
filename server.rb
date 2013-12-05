@@ -1,12 +1,15 @@
 $: << 'src'
+
 require 'sinatra'
-require 'model'
+require 'helpers'
+
+include Helpers
 
 get '/config' do
-  source_ip = request.env['REMOTE_ADDR']
-  # devices = AutomationStack::Infrastructure::Device.where(:ip => (not nil))
-  device = AutomationStack::Infrastructure::Device.where(:ip => source_ip)
-
+  device_ip = request.env['REMOTE_ADDR']
+  node_ip = find_node_ip_from_connected_device_ip(device_ip)
+  puts "node_ip = #{node_ip} for device_ip = #{device_ip}"
+  
   redirect 'http://www.google.co.uk' if source_ip == '192.168.1.79'
   redirect 'http://www.yahoo.com' if source_ip == '192.168.1.86'
 end
