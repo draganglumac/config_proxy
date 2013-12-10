@@ -8,7 +8,7 @@ include Helpers
 set :dynamic_proxy_routes, {}
 
 post '/SKG/proxy/add_route' do
-  add_route_or_source_ip_of_the_request
+  add_route_for_source_ip_of_the_request
 end
 
 post '/SKG/proxy/remove_route' do
