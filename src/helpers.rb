@@ -13,15 +13,15 @@ module Helpers
     end
   end
 
-  def add_route_for_source_ip_of_request
+  def add_route_for_source_ip_of_the_request
     request_ip = request.env['REMOTE_ADDR']
     redirect_url = params[:redirect_url]
-    settings.proxy_routes[request_ip] = redirect_url
+    settings.dynamic_proxy_routes[request_ip] = redirect_url
   end
 
-  def remove_route_for_source_ip_of_request
+  def remove_route_for_source_ip_of_the_request
     request_ip = request.env['REMOTE_ADDR']
-    settings.proxy_routes[request_ip] = nil
+    settings.dynamic_proxy_routes[request_ip] = nil
   end
 
 end
