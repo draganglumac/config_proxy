@@ -15,6 +15,10 @@ post '/SKG/proxy/remove_route' do
   remove_route_for_source_ip_of_the_request
 end
 
+get '/myip' do
+  request.env['REMOTE_ADDR']
+end
+
 get '/SKG/config.htm' do
   device_ip = request.env['REMOTE_ADDR']
   node_ip = find_node_ip_from_connected_device_ip(device_ip)
