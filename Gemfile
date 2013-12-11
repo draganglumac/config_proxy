@@ -6,6 +6,6 @@ gem 'mysql2'
 gem 'sequel'
 
 group :development do
-	gem 'pry'
-	gem 'pry-debugger'
+        gem 'pry'
+        gem 'pry-debugger'
 end

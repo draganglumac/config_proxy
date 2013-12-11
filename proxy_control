@@ -2,7 +2,7 @@
 
 function start()
 {
-	echo "Starting proxy on port 8111..."
+	echo "Starting proxy..."
 	bundle exec rackup &
 	echo "$!" > proxy.pid
 }
