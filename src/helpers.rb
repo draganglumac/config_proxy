@@ -24,4 +24,12 @@ module Helpers
     settings.dynamic_proxy_routes[calling_ip] = nil
   end
 
+  def get_url_for_SKG_config_hosted_on_node(node_ip)
+    "http://#{node_ip}:8111/SKG/config.htm"
+  end
+
+  def get_dynamic_redirect_url_for_device_ip(device_ip)
+    settings.dynamic_proxy_routes[device_ip]
+  end
+
 end

@@ -20,9 +20,9 @@ get '/SKG/config.htm' do
   node_ip = find_node_ip_from_connected_device_ip(device_ip)
 
   if node_ip
-    redirect "http://#{node_ip}:8111/SKG/config.htm"
+    redirect get_url_for_SKG_config_hosted_on_node(node_ip)
   else
-    redirect_url = settings.dynamic_proxy_routes[device_ip]
+    redirect_url = get_dynamic_redirect_url_for_device_ip(device_ip)
     redirect redirect_url if redirect_url
   end
 end
