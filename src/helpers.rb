@@ -28,6 +28,11 @@ module Helpers
     "http://#{node_ip}:8111/SKG/config.htm"
   end
 
+
+  def get_url_for_SGA_config_hosted_on_node(node_ip)
+    "http://#{node_ip}:8111/SGA/config.json"
+  end
+
   def get_dynamic_redirect_url_for_device_ip(device_ip)
     settings.dynamic_proxy_routes[device_ip]
   end
