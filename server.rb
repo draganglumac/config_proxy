@@ -32,15 +32,8 @@ get '/SGA/config.json' do
   end
 end
 
-
 get '/SKG/config.htm' do
   device_ip = request.env['REMOTE_ADDR']
-  node_ip = find_node_ip_from_connected_device_ip(device_ip)
-
-  if node_ip
-    redirect get_url_for_SKG_config_hosted_on_node(node_ip)
-  else
-    redirect_url = get_dynamic_redirect_url_for_device_ip(device_ip)
-    redirect redirect_url if redirect_url
-  end
+  redirect_url = get_dynamic_redirect_url_for_device_ip(device_ip)
+  redirect redirect_url if redirect_url
 end
