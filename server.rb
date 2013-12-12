@@ -19,7 +19,6 @@ get '/myip' do
   request.env['REMOTE_ADDR']
 end
 
-
 get '/SGA/config.json' do
   device_ip = request.env['REMOTE_ADDR']
   node_ip = find_node_ip_from_connected_device_ip(device_ip)
