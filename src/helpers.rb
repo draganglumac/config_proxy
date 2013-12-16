@@ -15,13 +15,13 @@ module Helpers
 
   def add_route_for_source_ip_of_the_request
     redirect_url = params[:redirect_url]
-    calling_ip = params[:calling_ip]
-    settings.dynamic_proxy_routes[calling_ip] = redirect_url
+    device_endpoint = params[:device_endpoint]
+    settings.dynamic_proxy_routes[device_endpoint] = redirect_url
   end
 
   def remove_route_for_source_ip_of_the_request
-    calling_ip = params[:calling_ip]
-    settings.dynamic_proxy_routes[calling_ip] = nil
+    device_endpoint = params[:device_endpoint]
+    settings.dynamic_proxy_routes[device_endpoint] = nil
   end
 
   def get_url_for_SKG_config_hosted_on_node(node_ip)
