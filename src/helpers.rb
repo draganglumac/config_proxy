@@ -37,4 +37,7 @@ module Helpers
     settings.dynamic_proxy_routes[device_ip]
   end
 
+  def dump_current_config
+    p settings.dynamic_proxy_routes
+  end
 end
