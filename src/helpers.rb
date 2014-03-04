@@ -38,6 +38,10 @@ module Helpers
   end
 
   def dump_current_config
-    p settings.dynamic_proxy_routes
+    html = "<html><head><title>Routes in Proxy</title></head></body><table><tr><th>Key</th><th>Value</th></tr>"
+    settings.dynamic_proxy_routes.each do |key, value|
+      html += "<tr><td>" + key + "</td><td>" + value + "</td></tr>"
+    end
+    html += "</table></body></html>"
   end
 end
