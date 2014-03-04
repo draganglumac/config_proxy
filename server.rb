@@ -30,3 +30,7 @@ get '/SKG/config.htm' do
   redirect_url = get_dynamic_redirect_url_for_device_ip(device_ip)
   redirect redirect_url if redirect_url
 end
+
+get '/proxy/dump' do
+  dump_current_config
+end
