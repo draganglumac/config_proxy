@@ -3,6 +3,7 @@
 function start()
 {
 	echo "Starting proxy..."
+	bundle install
 	bundle exec rackup &
 	echo "$!" > proxy.pid
 }
